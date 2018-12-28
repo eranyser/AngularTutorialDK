@@ -1,0 +1,17 @@
+.content {
+    margin: 10px;
+}
+
+tr {
+    padding-top: 10px;
+}
+
+th {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+td {
+    padding-left: 50px;
+    padding-right: 50px;
+}
