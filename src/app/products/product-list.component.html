@@ -2,10 +2,10 @@
 <hr>
 <div class="content">
   <div>
-    Filter by: <input type='text' />
+    Filter by: <input type='text' [(ngModel)]='listFilter' />
   </div>
   <div>
-      <h5>Filtered by:</h5>
+      <h5>Filtered by: {{listFilter}}</h5>
   </div>
   <div>
     <table *ngIf="products && products.length > 0">
