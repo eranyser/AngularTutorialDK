@@ -8,6 +8,8 @@ import { listLazyRoutes } from "@angular/compiler/src/aot/lazy_routes";
 })
 export class ProductListComponent {
     productTitle: string = "Product List";
+    imageWidth: number = 50;
+    imageMargin: number = 2
     products: any[] = [
         {
           "productId": 1,
