@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { listLazyRoutes } from "@angular/compiler/src/aot/lazy_routes";
+import {IProduct} from './product';
 
 @Component({
     selector: "pm-products",
@@ -7,12 +8,12 @@ import { listLazyRoutes } from "@angular/compiler/src/aot/lazy_routes";
     styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent {
-    productTitle: string = "Product List";
+    productTitle: string = 'Product List';
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    listFilter: string = "cart";
-    products: any[] = [
+    listFilter: string = 'cart';
+    products: IProduct[] = [
         {
           "productId": 1,
           "productName": "Leaf Rake",
@@ -67,5 +68,5 @@ export class ProductListComponent {
 
     toggleImage() {
       this.showImage = !this.showImage;
-    }  
+    }
 }
