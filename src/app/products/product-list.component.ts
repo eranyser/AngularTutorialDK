@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
-import { listLazyRoutes } from "@angular/compiler/src/aot/lazy_routes";
 import {IProduct} from './product';
+import {ConvertToSpacePipe} from '../shared/convert-to-space.pipe';
+
 
 @Component({
     selector: "pm-products",
     templateUrl: "./product-list.component.html",
-    styleUrls: ["./product-list.component.css"]
+    styleUrls: ["./product-list.component.css"],
 })
 export class ProductListComponent {
     productTitle: string = 'Product List';
