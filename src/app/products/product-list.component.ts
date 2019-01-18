@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import {IProduct} from './product';
 import {ConvertToSpacePipe} from '../shared/convert-to-space.pipe';
+import {listener} from '@angular/core/src/render3';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class ProductListComponent {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    listFilter: string = 'cart';
+    _listFilter: string = 'cart';
+    filteredProducts: IProduct[];
     products: IProduct[] = [
         {
           "productId": 1,
@@ -67,7 +69,22 @@ export class ProductListComponent {
         }
       ]
 
+    constructor() {
+      this.filteredProducts = this.performFilter(this.listFilter);
+    }
+    get listFilter() {
+      return this._listFilter;
+    }
+    set listFilter(filterValue: string) {
+      this._listFilter = filterValue;
+      this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+    }
     toggleImage() {
       this.showImage = !this.showImage;
+    }
+    performFilter(filterValue: string) {
+      return this.products.filter((product: IProduct) => {
+        return (product.productName.toLowerCase().includes(filterValue.toLowerCase()));
+      });
     }
 }

@@ -8,7 +8,7 @@
       <h5>Filtered by: {{listFilter}}</h5>
   </div>
   <div>
-    <table *ngIf="products && products.length > 0">
+    <table *ngIf="filteredProducts && filteredProducts.length > 0">
       <thead>
         <tr>
           <th>
@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let product of products'>
+        <tr *ngFor='let product of filteredProducts'>
           <td>
             <img  *ngIf='showImage'
                   [src]="product.imageUrl"
