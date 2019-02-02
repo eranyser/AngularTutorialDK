@@ -87,4 +87,8 @@ export class ProductListComponent {
         return (product.productName.toLowerCase().includes(filterValue.toLowerCase()));
       });
     }
+
+    starsClickd(message: string) {
+      this.productTitle = message;
+    }
 }
